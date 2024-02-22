@@ -1,7 +1,15 @@
+using LearnNet.DAO;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+//Configure the appSetting to the database
+var config = builder.Configuration.GetConnectionString("LearnNetDB");
+builder.Services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(config));
 
 var app = builder.Build();
 
