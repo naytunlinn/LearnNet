@@ -12,6 +12,9 @@ var config = builder.Configuration.GetConnectionString("LearnNetDB");
 builder.Services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(config));
 
 var app = builder.Build();
+/////////////////////////////
+///
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
