@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LearnNet.Models.DataModels
 {
@@ -18,9 +18,9 @@ namespace LearnNet.Models.DataModels
         [StringLength(36)]
         public string DiscussionForumId { get; set; }
 
-        [ForeignKey("UserId")]
+        [ForeignKey("StudentId")]
         [StringLength(36)]
-        public string UserId { get; set; }
+        public string StudentId { get; set; }
 
         [Required]
         public DateTime PostDate { get; set; }

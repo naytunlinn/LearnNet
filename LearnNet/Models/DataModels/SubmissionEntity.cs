@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LearnNet.Models.DataModels
 {
@@ -11,9 +11,9 @@ namespace LearnNet.Models.DataModels
         public string SubmissionId { get; set; }
 
         [Required]
-        [ForeignKey("User")]
+        [ForeignKey("Student")]
         [StringLength(36)]
-        public string UserId { get; set; }
+        public string StudentId { get; set; }
 
         [Required]
         [ForeignKey("Assessment")]
@@ -22,8 +22,6 @@ namespace LearnNet.Models.DataModels
 
         [Required]
         public DateTime SubmissionDate { get; set; }
-
-       
 
         // Add other submission-related properties
     }

@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LearnNet.Models.DataModels
 {
     [Table("tbl_DiscussionForums")]
-     public class DiscussionForumEntity: BaseEntity
+    public class DiscussionForumEntity : BaseEntity
     {
         [Key]
         [StringLength(36)]

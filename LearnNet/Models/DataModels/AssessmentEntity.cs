@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LearnNet.Models.DataModels
 {
     [Table("tbl_Assessments")]
-    public class AssessmentEntity:BaseEntity
+    public class AssessmentEntity : BaseEntity
     {
         [Key]
         [StringLength(36)]

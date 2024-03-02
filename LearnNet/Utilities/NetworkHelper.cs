@@ -1,5 +1,5 @@
-﻿using System.Net.Sockets;
-using System.Net;
+﻿using System.Net;
+using System.Net.Sockets;
 
 namespace LearnNet.Utilities
 {
@@ -18,5 +18,4 @@ namespace LearnNet.Utilities
             throw new Exception("No network adapters with an IPv4 address in the system!");
         }
     }
-
 }

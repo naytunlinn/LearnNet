@@ -1,27 +1,35 @@
 ﻿using LearnNet.Models.DataModels;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace LearnNet.DAO
 {
-    public class ApplicationDbContext : DbContext
+    //IdentityDbContext<IdentityUser, IdentityRole, string>
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser, IdentityRole, string>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> db) : base(db)
         {
-
         }
-       public DbSet<AssessmentEntity> AssessmentEntities { get; set; }
-        public DbSet<CommentEntity> CommentEntities { get; set; }
-        public DbSet<CourseEntity> CourseEntities { get; set;}
-        public DbSet<DiscussionForumEntity> DiscussionForumEntities { get; set; }
-        public DbSet<EnrollmentEntity> EnrollmentEntities { get; set; }
-        public DbSet<ModuleEntity> ModuleEntities { get; set; }
-        public DbSet<PostEntity> PostEntities { get; set; }
-        public DbSet<ResourceEntity> ResourceEntities { get; set; }
-        public DbSet<SubmissionEntity> SubmissionEntities { get; set; }
 
-        public DbSet<UserEntity> UserEntities { get; set; }
-        public DbSet<VideoEntity> VideoEntities { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            // Enable sensitive data logging and specify your database provider and connection string
+            optionsBuilder
+                .EnableSensitiveDataLogging()
+                .UseSqlServer("server=Franco;Database=LearnNetDB;User Id=sa;Password=sasa");
+        }
 
-
+        public DbSet<AssessmentEntity> Assessments { get; set; }
+        public DbSet<CommentEntity> Comments { get; set; }
+        public DbSet<CourseEntity> Courses { get; set; }
+        public DbSet<DiscussionForumEntity> DiscussionForums { get; set; }
+        public DbSet<EnrollmentEntity> Enrollments { get; set; }
+        public DbSet<ModuleEntity> Modules { get; set; }
+        public DbSet<PostEntity> Posts { get; set; }
+        public DbSet<ResourceEntity> Resources { get; set; }
+        public DbSet<SubmissionEntity> Submissions { get; set; }
+        public DbSet<StudentEntity> Students { get; set; }
+        public DbSet<VideoEntity> Videos { get; set; }
     }
 }

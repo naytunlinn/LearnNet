@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LearnNet.Models.DataModels
 {
     [Table("tbl_Comments")]
-    public class CommentEntity: BaseEntity
+    public class CommentEntity : BaseEntity
     {
         [Key]
         [StringLength(36)]
@@ -20,7 +20,7 @@ namespace LearnNet.Models.DataModels
 
         [ForeignKey("UserId")]
         [StringLength(36)]
-        public string UserId { get; set; }
+        public string StudentId { get; set; }
 
         [Required]
         public DateTime CommentDate { get; set; }
